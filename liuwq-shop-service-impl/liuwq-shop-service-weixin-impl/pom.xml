@@ -11,5 +11,13 @@
 
     <artifactId>liuwq-shop-service-weixin-impl</artifactId>
 
+    <dependencies>
+        <!-- weixin api -->
+        <dependency>
+            <groupId>com.gouride</groupId>
+            <artifactId>liuwq-shop-service-weixin-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

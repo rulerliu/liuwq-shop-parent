@@ -11,5 +11,18 @@
 
     <artifactId>liuwq-shop-service-member-impl</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.gouride</groupId>
+            <artifactId>liuwq-shop-service-member-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gouride</groupId>
+            <artifactId>liuwq-shop-service-weixin-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

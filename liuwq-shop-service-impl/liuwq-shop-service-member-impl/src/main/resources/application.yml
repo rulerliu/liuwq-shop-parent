@@ -7,3 +7,16 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1
+
+swagger:
+  # 注意：这里要扫描实现类的包路径
+  base-package: com.liuwq.service.member.impl
+  title: 会员服务接口title
+  description: 会员服务接口description
+  version: 1.1
+  terms-of-service-url: www.baidu.com
+  contact:
+    name: liuwq
+    email: 87268782@qq.com
+    url: www.baidu.com
+  enabled: true

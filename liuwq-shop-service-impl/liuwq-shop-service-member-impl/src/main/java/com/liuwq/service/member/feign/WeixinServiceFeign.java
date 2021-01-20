@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 @FeignClient("liuwq-weixin")
 public interface WeixinServiceFeign extends WeixinService {
 
-    /*@GetMapping("appInfo")
+    /*@GetMapping("appInfo") // 注意：这里必须要加上@RequestParam注解
     String appInfo(@RequestParam("userId") Long userId);
 */
 }

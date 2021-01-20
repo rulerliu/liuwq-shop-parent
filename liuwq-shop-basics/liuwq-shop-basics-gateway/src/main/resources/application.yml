@@ -1,0 +1,31 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: liuwq-gateway
+  cloud:
+    nacos:
+      discovery:
+        ##服务的注册
+        server-addr: 127.0.0.1:8848
+    gateway:
+      locator:
+        enabled: true
+      routes:
+        - id: liuwq-weixin
+          uri: lb://liuwq-weixin
+          predicates:
+            - Path=/liuwq-weixin/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+        - id: liuwq-member
+          uri: lb://liuwq-member
+          predicates:
+            - Path=/liuwq-member/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+      x-forwarded: # 不加这个用swagger调接口会发送两次请求
+        enabled: false
