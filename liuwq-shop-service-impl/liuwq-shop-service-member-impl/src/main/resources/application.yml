@@ -1,13 +1,3 @@
-server:
-  port: 7070
-spring:
-  application:
-    name: liuwq-member
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1
-
 swagger:
   # 注意：这里要扫描实现类的包路径
   base-package: com.liuwq.service.member.impl
@@ -20,3 +10,7 @@ swagger:
     email: 87268782@qq.com
     url: www.baidu.com
   enabled: true
+
+# 远程配置优先级大于这里
+#project:
+#  env: 22

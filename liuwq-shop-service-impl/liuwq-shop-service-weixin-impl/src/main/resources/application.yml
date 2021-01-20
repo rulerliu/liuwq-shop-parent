@@ -1,13 +1,3 @@
-server:
-  port: 9091
-spring:
-  application:
-    name: liuwq-weixin
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1
-
 swagger:
   # 注意：这里要扫描实现类的包路径
   base-package: com.liuwq.service.weixin.impl

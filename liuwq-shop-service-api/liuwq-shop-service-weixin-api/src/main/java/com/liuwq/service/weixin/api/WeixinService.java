@@ -28,4 +28,7 @@ public interface WeixinService {
     @GetMapping("addApp")
     BaseResponse<String> addApp(@RequestParam("appId") String appId, @RequestParam("appName") String appName);
 
+    @ApiOperation("获取配置文件")
+    @GetMapping("getConfig")
+    String getConfig();
 }

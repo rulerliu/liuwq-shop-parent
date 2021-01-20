@@ -13,4 +13,8 @@ public interface MemberService {
     @GetMapping("memberToWeixin")
     public String memberToWeixin(Long appId);
 
+    @ApiOperation("获取配置")
+    @GetMapping("getConfig")
+    public String getConfig();
+
 }
