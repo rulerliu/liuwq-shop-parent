@@ -10,3 +10,20 @@ swagger:
     email: 87268782@qq.com
     url: www.baidu.com
   enabled: true
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#wx:
+#  mp:
+#    configs:
+#      - appId: wx1cfc856828f3c25b
+#        secret: 15ec9979e10838dff8ee336522f62ee0
+#        token: mayikt
+#  defaultMsg: 您的消息我已经收到了，后期会给您回复的噢!
+#  rpcWeatherUrl: https://api.seniverse.com/v3/weather/now.json?key=S2f6L62SpD0ivVO6j&location=#{location}language=zh-Hans&unit=c

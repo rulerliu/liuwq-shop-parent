@@ -13,6 +13,7 @@
         <module>liuwq-shop-service-impl</module>
         <module>liuwq-shop-service-base</module>
         <module>liuwq-shop-basics</module>
+        <module>liuwq-shop-common</module>
     </modules>
 
 
