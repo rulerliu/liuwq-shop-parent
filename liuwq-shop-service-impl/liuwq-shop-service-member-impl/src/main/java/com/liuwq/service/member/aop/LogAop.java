@@ -20,7 +20,7 @@ public class LogAop {
      * 切入点
      * 匹配com.liuwq.demo.controller包及其子包下的所有类的所有方法
      */
-    @Pointcut("execution(* com.liuwq.service.member.impl.*.*(..))")
+    @Pointcut("execution(* com.liuwq.service.member.controller.*.*(..))")
     public void pointCut(){
     }
 

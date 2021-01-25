@@ -1,5 +1,6 @@
 package liuwq.shop.service.base;
 
+import com.liuwq.shop.common.util.MeiteBeanUtils;
 import liuwq.shop.service.constants.Constants;
 import lombok.Data;
 
@@ -50,6 +51,34 @@ public class BaseApiService<T> {
 
     public BaseResponse<T> setResult(Integer code, String msg, T data) {
         return new BaseResponse<T>(code, msg, data);
+    }
+
+    /**
+     * dto 转换do
+     *
+     * @param dtoEntity
+     * @param doClass
+     * @param <Do>
+     * @return
+     */
+    public static <Do> Do dtoToDo(Object dtoEntity, Class<Do> doClass) {
+        return MeiteBeanUtils.dtoToDo(dtoEntity, doClass);
+    }
+
+    /**
+     * do转换成dto
+     * @param doEntity
+     * @param dtoClass
+     * @param <Dto>
+     * @return
+     */
+    public static <Dto> Dto doToDto(Object doEntity, Class<Dto> dtoClass) {
+        return MeiteBeanUtils.doToDto(doEntity, dtoClass);
+    }
+
+    public BaseResponse<T> setResult(int dbCount, T successMsg, String errorMsg) {
+        return dbCount > 0 ? setResultSuccess(successMsg) :
+                setResultError(errorMsg);
     }
 
 }

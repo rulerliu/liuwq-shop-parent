@@ -1,6 +1,6 @@
 swagger:
   # 注意：这里要扫描实现类的包路径
-  base-package: com.liuwq.service.weixin.impl
+  base-package: com.liuwq.service.weixin.controller
   title: 微信服务接口title
   description: 微信服务接口description
   version: 1.1

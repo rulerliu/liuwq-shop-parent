@@ -6,9 +6,9 @@ import liuwq.shop.service.base.BaseResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-@RestController
+@Service
 @RefreshScope
 public class WeixinServiceImpl extends BaseApiService implements WeixinService {
     @Value("${project.env}")
