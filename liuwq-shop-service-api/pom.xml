@@ -16,6 +16,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
         <!--  springboot 整合web组件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

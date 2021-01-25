@@ -19,6 +19,10 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
+# 这里优先级小于远程配置
+#project:
+#  env: 22
+
 #wx:
 #  mp:
 #    configs:
@@ -26,4 +30,4 @@ spring:
 #        secret: 15ec9979e10838dff8ee336522f62ee0
 #        token: mayikt
 #  defaultMsg: 您的消息我已经收到了，后期会给您回复的噢!
-#  rpcWeatherUrl: https://api.seniverse.com/v3/weather/now.json?key=S2f6L62SpD0ivVO6j&location=#{location}language=zh-Hans&unit=c
+#  rpcWeatherUrl: https://api.seniverse.com/v3/weather/now.json?key=S2f6L62SpD0ivVO6j&location=#location&language=zh-Hans&unit=c

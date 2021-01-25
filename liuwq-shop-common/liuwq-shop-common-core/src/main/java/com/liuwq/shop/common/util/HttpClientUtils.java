@@ -1,4 +1,4 @@
-package com.liuwq.shop.util;
+package com.liuwq.shop.common.util;
 
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;

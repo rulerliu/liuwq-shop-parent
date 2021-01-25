@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.liuwq.service.weixin.entity.WechatKeyword;
 import com.liuwq.service.weixin.mapper.KeywordMapper;
 import com.liuwq.service.weixin.mp.builder.TextBuilder;
-import com.liuwq.shop.util.HttpClientUtils;
+import com.liuwq.shop.common.util.HttpClientUtils;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
@@ -29,10 +29,12 @@ public class MsgHandler extends AbstractHandler {
 
     @Value("${wx.defaultMsg}")
     private String defaultMsg;
+
+    @Value("${wx.rpcWeatherUrl}")
+    private String rpcWeatherUrl;
     /**
      * 心知天气接口：https://www.seniverse.com/
      */
-    private static final String weatherUrl = "https://api.seniverse.com/v3/weather/now.json?key=SXRb2phuktiT5-Y25&location=#{location}&language=zh-Hans&unit=c";
     @Autowired
     private KeywordMapper keywordMapper;
 
@@ -53,7 +55,7 @@ public class MsgHandler extends AbstractHandler {
                     : keywordValue, wxMessage, weixinService);
         }
         //2.调用第三方天气预报接口查询
-        String realWeatherUrl = weatherUrl.replace("#{location}", content);
+        String realWeatherUrl = rpcWeatherUrl.replace("#location", content);
         JSONObject resultJsonObject = HttpClientUtils.httpGet(realWeatherUrl);
         if (resultJsonObject != null) {
             JSONArray results = resultJsonObject.getJSONArray("results");

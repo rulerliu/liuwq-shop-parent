@@ -16,6 +16,12 @@ public class MemberServiceImpl implements MemberService {
     @Value("${project.env}")
     private String env;
 
+    @Value("${wx.defaultMsg}")
+    private String defaultMsg;
+
+    @Value("${aaa.bbb}")
+    private String weatherUrl1;
+
     public String memberToWeixin(Long appId) {
         return "会员调用微信服务：" + weixinServiceFeign.appInfo(appId);
     }

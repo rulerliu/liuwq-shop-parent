@@ -19,6 +19,6 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
-# 远程配置优先级大于这里
+# 这里优先级小于远程配置
 #project:
 #  env: 22
