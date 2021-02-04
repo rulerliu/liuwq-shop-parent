@@ -1,11 +1,14 @@
 package com.liuwq.service.member.controller;
 
 import com.liuwq.service.member.api.MemberService;
+import com.liuwq.service.member.dto.resp.UserRespDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import liuwq.shop.service.base.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,6 +29,12 @@ public class MemberController {
     @GetMapping("getConfig")
     public String getConfig() {
         return memberService.getConfig();
+    }
+
+    @ApiOperation("根据userToken查询用户信息")
+    @GetMapping("getMemberInfo")
+    public BaseResponse<UserRespDto> getMemberInfo(@RequestParam String userToken) {
+        return memberService.getMemberInfo(userToken);
     }
 
 }

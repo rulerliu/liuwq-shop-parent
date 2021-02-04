@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 
 public interface UserMapper {
 
-    @Insert("INSERT INTO `meite_user` VALUES (null, #{mobile},null, #{passWord}, null, '0', '0', null," +
+    @Insert("INSERT INTO `meite_user` VALUES (null, #{mobile}, #{passWord}, null, '0', '0', null," +
             " '1', now(), null, null);\n")
     int register(UserDo userDo);
 

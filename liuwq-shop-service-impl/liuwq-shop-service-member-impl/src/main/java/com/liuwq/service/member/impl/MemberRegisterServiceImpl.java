@@ -18,15 +18,6 @@ public class MemberRegisterServiceImpl extends BaseApiService implements MemberR
 
     @Override
     public BaseResponse<JSONObject> register(UserRegisterReqDto userRegisterReqDto) {
-        // 参数验证
-        /*String mobile = userRegisterReqDto.getMobile();
-        if (StringUtils.isEmpty(mobile)) {
-            return setResultError("mobile参数不能为空");
-        }
-        String passWord = userRegisterReqDto.getPassWord();
-        if (StringUtils.isEmpty(userReqRegisterDto.getPassWord())) {
-            return setResultError("passWord参数不能为空");
-        }*/
         // 先检查该手机号码是否存在
         UserDo userDbDo = userMapper.existMobile(userRegisterReqDto.getMobile());
         if (userDbDo != null) {
@@ -39,8 +30,6 @@ public class MemberRegisterServiceImpl extends BaseApiService implements MemberR
         userDo.setPassWord(newPassWord);
         //盐 密码+手机号码、提前定义盐值常量
         int register = userMapper.register(userDo);
-//        return register > 0 ? setResultSuccess("注册成功") :
-//                setResultError("注册失败");
         return setResult(register, "注册成功", "注册失败");
     }
     /**

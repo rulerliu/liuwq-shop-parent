@@ -12,6 +12,10 @@ swagger:
   enabled: true
 
 spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC
     username: root
