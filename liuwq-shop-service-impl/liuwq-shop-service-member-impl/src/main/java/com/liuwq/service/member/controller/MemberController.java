@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import liuwq.shop.service.base.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,7 +33,7 @@ public class MemberController {
 
     @ApiOperation("根据userToken查询用户信息")
     @GetMapping("getMemberInfo")
-    public BaseResponse<UserRespDto> getMemberInfo(@RequestParam String userToken) {
+    public BaseResponse<UserRespDto> getMemberInfo(@RequestHeader String userToken) {
         return memberService.getMemberInfo(userToken);
     }
 

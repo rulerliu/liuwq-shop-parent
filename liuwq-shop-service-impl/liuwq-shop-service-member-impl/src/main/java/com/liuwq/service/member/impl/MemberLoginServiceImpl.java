@@ -27,7 +27,7 @@ public class MemberLoginServiceImpl extends BaseApiService implements MemberLogi
     private AsyncLoginLogManage asyncLoginLogManage;
 
     @Override
-    public BaseResponse<JSONObject> login(UserLoginReqDto userLoginReqDto) {
+    public BaseResponse<JSONObject> login(UserLoginReqDto userLoginReqDto, String ipAddress) {
         String mobile = userLoginReqDto.getMobile();
         String passWord = userLoginReqDto.getPassWord();
         String newPassword = MD5Util.MD5(passWord);
@@ -46,7 +46,7 @@ public class MemberLoginServiceImpl extends BaseApiService implements MemberLogi
 //        for (int i = 0; i < 13; i++) {
 //        for (int i = 0; i < 12; i++) {
         log.info(Thread.currentThread().getName() + " 处理流程1");
-        asyncLoginLogManage.loginLog(userId, "192.168.212.110", new Date(), userToken
+        asyncLoginLogManage.loginLog(userId, ipAddress, new Date(), userToken
                 , "PC", "windows 谷歌浏览器");
         log.info(Thread.currentThread().getName() + " 处理流程3");
 //        }

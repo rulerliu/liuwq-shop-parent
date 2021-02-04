@@ -9,9 +9,9 @@ public interface MemberLoginService {
     /**
      * 会员登录接口
      *
-     * @param userLoginReqDto
+     * @param userLoginReqDt
      * @return
      */
-    BaseResponse<JSONObject> login(UserLoginReqDto userLoginReqDto);
+    BaseResponse<JSONObject> login(UserLoginReqDto userLoginReqDt, String ipAddress);
 
 }

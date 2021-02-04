@@ -9,7 +9,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 
 @Component
-@Deprecated
 public class SwaggerHeaderFilter extends AbstractGatewayFilterFactory {
     private static final String HEADER_NAME = "X-Forwarded-Prefix";
 

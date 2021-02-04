@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,8 +23,9 @@ public class MemberLoginController {
 
     @ApiOperation("会员登录")
     @PostMapping("/login")
-    BaseResponse<JSONObject> login(@Validated @RequestBody UserLoginReqDto userLoginReqDto, BindingResult bindingResult) {
-        return memberLoginService.login(userLoginReqDto);
+    BaseResponse<JSONObject> login(@Validated @RequestBody UserLoginReqDto userLoginReqDto, BindingResult bindingResult,
+                                   @RequestHeader("X-Real-IP") String ipAddress) {
+        return memberLoginService.login(userLoginReqDto, ipAddress);
     }
 
 }
